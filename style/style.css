@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+/* ============================================================= */
+/* -------------------------- root elements -------------------- */
+/* ============================================================= */
+
+:root {
+    color-scheme: light dark;
+    --box-bdr: 12px;
+
+}
+
+/* ============================================================= */
+/* --------- Light and dark theme according to browser --------- */
+/* ============================================================= */
+
+/* -------------- light theme ----------------- */
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-primary: #24292e;
+        --text-secondary: #4b4f52;
+        --background-primary: white;
+        --background-secondary: rgb(210, 210, 210);
+        --shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px;
+    }
+}
+
+/* -------------- dark theme ----------------- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: white;
+        --text-secondary: rgb(207, 207, 207);
+        --background-primary: #24292e;
+        --background-secondary: #515151;
+        --shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px 0px;
+    }
+}
