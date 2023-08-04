@@ -27,8 +27,8 @@
     :root {
         --text-primary: black;
         --text-secondary: #4a4a4a;
-        --background-primary: white;
-        --background-hover: rgb(238, 238, 238);
+        --background-primary: rgba(223, 223, 223, 0.382);
+        --background-hover: rgb(255, 255, 255);
     }
 }
 
@@ -57,8 +57,13 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.cradit {
+    margin-top: 3rem;
 }
 
 /* ============================================================= */
@@ -66,51 +71,63 @@ body {
 /* ============================================================= */
 
 .calculator--box {
+    width: 17rem;
     background-color: var(--background-primary);
     padding: var(--box-padding-2);
     border-radius: var(--box-bdr-1);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* ----------------------- styling display box ------------------- */
 
 .display {
-    margin-top: var(--box-margin-1);
+    margin-top: 3rem;
 }
 
 .answer--box {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--text-primary);
     text-align: right;
     margin-block: var(--box-margin-2);
+    overflow: hidden;
 }
 
 .calculation--box {
+    overflow: auto;
     font-size: 14px;
     text-align: right;
+}
+
+.calculation--box::-webkit-scrollbar {
+    width: 12px;
 }
 
 /* ----------------------- styling buttons box ------------------- */
 
 .buttons {
-    margin-block: var(--box-margin-2);
+    margin-block: var(--box-margin-1);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 12px;
 }
 
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6px;
+    padding: var(--box-padding-3);
     font-size: 1rem;
     border-radius: var(--box-bdr-2);
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: all .1s;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: var(--background-hover);
 }
 
@@ -118,11 +135,20 @@ body {
     grid-column: 3 / 1;
     grid-row: 5;
     background-color: var(--universal-main-color);
+    grid-area: 6 / 5 / 5 / 3;
 }
-.btn-equal:hover{
+
+.btn-equal:hover {
     background-color: rgb(255, 145, 62);
 }
 
 .function-btn {
     color: #ED802E;
+}
+
+.active {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.07);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.07);
+    transform:scale(.93);
 }
