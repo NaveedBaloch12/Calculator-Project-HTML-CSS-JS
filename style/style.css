@@ -1,17 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    outline: none;
-}
-
 /* ============================================================= */
 /* -------------------------- root elements -------------------- */
 /* ============================================================= */
 
 :root {
     color-scheme: light dark;
-    --box-bdr: 12px;
+    --universal-main-color: #ED802E;
 
+    --box-bdr-1: 1rem;
+    --box-bdr-2: 6px;
+
+    --box-padding-1: 2rem;
+    --box-padding-2: 1rem;
+    --box-padding-3: 12px;
+
+    --box-margin-1: 2rem;
+    --box-margin-2: 1rem;
+    --box-margin-3: 12px;
 }
 
 /* ============================================================= */
@@ -21,11 +25,10 @@
 /* -------------- light theme ----------------- */
 @media (prefers-color-scheme: light) {
     :root {
-        --text-primary: #24292e;
-        --text-secondary: #4b4f52;
+        --text-primary: black;
+        --text-secondary: #4a4a4a;
         --background-primary: white;
-        --background-secondary: rgb(210, 210, 210);
-        --shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px;
+        --background-hover: rgb(238, 238, 238);
     }
 }
 
@@ -33,9 +36,93 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --text-primary: white;
-        --text-secondary: rgb(207, 207, 207);
-        --background-primary: #24292e;
-        --background-secondary: #515151;
-        --shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px 0px;
+        --text-secondary: #d1d1d1;
+        --background-primary: #243441;
+        --background-hover: #283a49;
     }
+}
+
+/* ============================================================= */
+/* ----------------------- ------------------ ------------------ */
+/* ============================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    color: var(--text-secondary);
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================================================= */
+/* ----------------------- Calculator Box CSS ------------------ */
+/* ============================================================= */
+
+.calculator--box {
+    background-color: var(--background-primary);
+    padding: var(--box-padding-2);
+    border-radius: var(--box-bdr-1);
+}
+
+/* ----------------------- styling display box ------------------- */
+
+.display {
+    margin-top: var(--box-margin-1);
+}
+
+.answer--box {
+    font-size: 2rem;
+    color: var(--text-primary);
+    text-align: right;
+    margin-block: var(--box-margin-2);
+}
+
+.calculation--box {
+    font-size: 14px;
+    text-align: right;
+}
+
+/* ----------------------- styling buttons box ------------------- */
+
+.buttons {
+    margin-block: var(--box-margin-2);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: var(--box-bdr-2);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: var(--background-hover);
+}
+
+.btn-equal {
+    grid-column: 3 / 1;
+    grid-row: 5;
+    background-color: var(--universal-main-color);
+}
+.btn-equal:hover{
+    background-color: rgb(255, 145, 62);
+}
+
+.function-btn {
+    color: #ED802E;
 }
