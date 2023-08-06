@@ -18,40 +18,42 @@
 
 <body>
     <section class="calculator--box">
-        <div class="display">
-            <div class="answer--box" id="answer" >123456789</div>
-            <div class="calculation--box" id="calc">1234+1234*132154</div>
-        </div>
+        <form>
+            <div class="display">
+                <input type="text" name="display" id="lcd" disabled>
+            </div>
+        </form>
+
         <div class="buttons">
 
-            <div class="btn btn-ac function-btn" data-code-1="Backspace">AC</div>
-            <div class="btn btn-del function-btn" data-code-1="Delete">DEL</div>
+            <div class="btn btn-ac" data-code-1="Backspace" onclick="clearAll()">AC</div>
+            <div class="btn btn-del" data-code-1="Delete" onclick="deleteOne()">DEL</div>
 
-            <div class="btn btn-percent function-btn" data-code-1="">ANS</div>
-            <div class="btn btn-devide function-btn"data-code-1="NumpadDivide" data-code-2="Slash">÷</div>
+            <div class="btn" onclick="squrt()">√</div>
+            <div class="btn btn-divide method-btn" data-code-1="NumpadDivide" data-code-2="Slash">/</div>
 
-            <div class="btn btn-7 " data-code-1="Digit7" data-code-2="Numpad7" >7</div>
-            <div class="btn btn-8 " data-code-1="Digit8" data-code-2="Numpad8" >8</div>
-            <div class="btn btn-9 " data-code-1="Digit9" data-code-2="Numpad9" >9</div>
-            
-            <div class="btn btn-cross function-btn" data-code-1="NumpadMultiply">×</div>
+            <div class="btn btn-7" data-code-1="Digit7" data-code-2="Numpad7"">7</div>
+            <div class="btn btn-8" data-code-1="Digit8" data-code-2="Numpad8"">8</div>
+            <div class="btn btn-9" data-code-1="Digit9" data-code-2="Numpad9"">9</div>
 
-            <div class="btn btn-4 " data-code-1="Digit4" data-code-2="Numpad4" >4</div>
-            <div class="btn btn-5 " data-code-1="Digit5" data-code-2="Numpad5" >5</div>
-            <div class="btn btn-6 " data-code-1="Digit6" data-code-2="Numpad6" >6</div>
-            
-            <div class="btn btn-sub function-btn" data-code-1="NumpadSubtract">-</div>
-            
-            <div class="btn btn-1 " data-code-1="Digit1" data-code-2="Numpad1" >1</div>
-            <div class="btn btn-2 " data-code-1="Digit2" data-code-2="Numpad2" >2</div>
-            <div class="btn btn-3 " data-code-1="Digit3" data-code-2="Numpad3" >3</div>
+            <div class="btn btn-cross method-btn" data-code-1="NumpadMultiply">*</div>
 
-            <div class="btn btn-plus function-btn" data-code-1="NumpadAdd">+</div>
+            <div class="btn btn-4" data-code-1="Digit4" data-code-2="Numpad4"">4</div>
+            <div class="btn btn-5" data-code-1="Digit5" data-code-2="Numpad5"">5</div>
+            <div class="btn btn-6" data-code-1="Digit6" data-code-2="Numpad6"">6</div>
 
-            <div class="btn btn-0 " data-code-1="Digit0" data-code-2="Numpad0" >0</div>
+            <div class="btn btn-sub method-btn" data-code-1="NumpadSubtract">-</div>
 
-            <div class="btn btn-dot " data-code-1="NumpadDecimal" data-code-2="Period">.</div>
-            <div class="btn btn-equal "data-code-1="NumpadEnter" data-code-2="Enter">=</div>
+            <div class="btn btn-1" data-code-1="Digit1" data-code-2="Numpad1"">1</div>
+            <div class="btn btn-2" data-code-1="Digit2" data-code-2="Numpad2"">2</div>
+            <div class="btn btn-3" data-code-1="Digit3" data-code-2="Numpad3"">3</div>
+
+            <div class="btn btn-plus method-btn" data-code-1="NumpadAdd" >+</div>
+
+            <div class="btn btn-0" data-code-1="Digit0" data-code-2="Numpad0"">0</div>
+
+            <div class="btn btn-dot" data-code-1="NumpadDecimal" data-code-2="Period">.</div>
+            <div class="btn btn-equal" data-code-1="NumpadEnter" data-code-2="Enter" onclick="calculate()">=</div>
 
         </div>
     </section>
